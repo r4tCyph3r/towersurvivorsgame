@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm683bq50sajg"]
+
+[ext_resource type="Script" uid="uid://b3h1kgpe7r67t" path="res://movement_component.gd" id="1_tf4rw"]
+
+[node name="MovementComponent" type="CharacterBody3D"]
+script = ExtResource("1_tf4rw")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://6mbtoblws0cn"]
+
+[ext_resource type="Script" uid="uid://ch40sw6hxn1dd" path="res://player_input_component.gd" id="1_rgtdr"]
+
+[node name="PlayerInputComponent" type="Node3D"]
+script = ExtResource("1_rgtdr")

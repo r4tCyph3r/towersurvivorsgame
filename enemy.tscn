@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://c72fyayrst82s"]
+
+[ext_resource type="PackedScene" uid="uid://cm683bq50sajg" path="res://movement_component.tscn" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://c37d4x21xvq75" path="res://damage_component.tscn" id="3_iifgy"]
+[ext_resource type="Script" uid="uid://bntr05ve45bx0" path="res://navigation_agent_3d.gd" id="3_qi2p4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qi2p4"]
+albedo_color = Color(0.596837, 0.172255, 1, 0.796078)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
+material = SubResource("StandardMaterial3D_qi2p4")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi2p4"]
+radius = 0.75
+
+[node name="Enemy" type="Node3D" groups=["enemy"]]
+
+[node name="MovementComponent" parent="." instance=ExtResource("1_7k104")]
+collision_layer = 4
+collision_mask = 5
+move_speed = 4.0
+
+[node name="EnemyCollider" type="CollisionShape3D" parent="MovementComponent"]
+shape = SubResource("CapsuleShape3D_4gyqm")
+debug_color = Color(0, 0.6, 0.701961, 0.894118)
+
+[node name="EnemyMesh" type="MeshInstance3D" parent="MovementComponent"]
+mesh = SubResource("CapsuleMesh_iifgy")
+skeleton = NodePath("../../..")
+
+[node name="EnemyControllerComponent" type="NavigationAgent3D" parent="MovementComponent"]
+script = ExtResource("3_qi2p4")
+
+[node name="DamageComponent" parent="MovementComponent" instance=ExtResource("3_iifgy")]
+collision_layer = 0
+collision_mask = 2
+base_damage = 10
+
+[node name="DamageArea" type="CollisionShape3D" parent="MovementComponent/DamageComponent"]
+shape = SubResource("CapsuleShape3D_qi2p4")
