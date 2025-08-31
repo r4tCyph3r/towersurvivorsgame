@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ikn7nqoivqb"]
+
+[ext_resource type="Script" uid="uid://bntr05ve45bx0" path="res://CoreComponents/EnemyNavAgent/navigation_agent_3d.gd" id="1_cvlv0"]
+
+[node name="EnemyControllerComponent" type="NavigationAgent3D"]
+script = ExtResource("1_cvlv0")

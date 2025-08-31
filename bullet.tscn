@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg25qr4h2wnf2"]
+
+[ext_resource type="PackedScene" uid="uid://c37d4x21xvq75" path="res://CoreComponents/AttackComponent/attack_component.tscn" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://bmrmdqbb6ugfq" path="res://bullet.gd" id="1_v8qja"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t4vbm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v8qja"]
+
+[node name="Bullet" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 13
+gravity_scale = 0.0
+script = ExtResource("1_v8qja")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_t4vbm")
+
+[node name="AttackComponent" parent="." instance=ExtResource("1_v7oki")]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackComponent"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_v8qja")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
+
+[connection signal="area_entered" from="AttackComponent" to="AttackComponent" method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="_on_visible_on_screen_enabler_3d_screen_exited"]

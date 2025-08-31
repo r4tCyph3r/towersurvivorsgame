@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://nc6sgca7nyw1"]
+
+[ext_resource type="Script" uid="uid://n1th2fvqrfjb" path="res://Entities/Players/pickup_comp.gd" id="1_vyfpk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5vp2d"]
+radius = 5.0
+
+[node name="PickupComponent" type="Area3D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_vyfpk")
+
+[node name="PickupRadius" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_5vp2d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

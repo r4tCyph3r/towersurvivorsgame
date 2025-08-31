@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://c72fyayrst82s"]
+
+[ext_resource type="PackedScene" uid="uid://cm683bq50sajg" path="res://CoreComponents/MovementComponent/movement_component.tscn" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://2ikn7nqoivqb" path="res://CoreComponents/EnemyNavAgent/toPlayer_NavAgentComponent.tscn" id="2_6rqwt"]
+[ext_resource type="PackedScene" uid="uid://c37d4x21xvq75" path="res://CoreComponents/AttackComponent/attack_component.tscn" id="3_iifgy"]
+[ext_resource type="PackedScene" uid="uid://chq6btlbbxpl0" path="res://CoreComponents/HealthComponent/health_component.tscn" id="4_ihd1f"]
+[ext_resource type="PackedScene" uid="uid://ty5v85nb0alk" path="res://CoreComponents/HitboxComponent/hitbox_component.tscn" id="5_o1grr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
+radius = 0.617765
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qi2p4"]
+albedo_color = Color(0.596837, 0.172255, 1, 0.796078)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
+material = SubResource("StandardMaterial3D_qi2p4")
+
+[node name="Enemy" type="Node3D" groups=["enemy"]]
+
+[node name="MovementComponent" parent="." instance=ExtResource("1_7k104")]
+collision_layer = 4
+collision_mask = 13
+move_speed = 4.0
+
+[node name="EnemyCollider" type="CollisionShape3D" parent="MovementComponent"]
+shape = SubResource("CapsuleShape3D_4gyqm")
+debug_color = Color(0.979227, 0, 0.393622, 0.894118)
+
+[node name="EnemyMesh" type="MeshInstance3D" parent="MovementComponent"]
+mesh = SubResource("CapsuleMesh_iifgy")
+skeleton = NodePath("../../..")
+
+[node name="EnemyControllerComponent" parent="MovementComponent" instance=ExtResource("2_6rqwt")]
+
+[node name="AttackComponent" parent="MovementComponent" instance=ExtResource("3_iifgy")]
+collision_layer = 4
+collision_mask = 2
+hit_damage = 10
+
+[node name="AttackboxShape" type="CollisionShape3D" parent="MovementComponent/AttackComponent"]
+shape = SubResource("CapsuleShape3D_4gyqm")
+debug_color = Color(0.979227, 0, 0.393622, 0.894118)
+
+[node name="HealthComponent" parent="MovementComponent" instance=ExtResource("4_ihd1f")]
+
+[node name="HitboxComponent" parent="MovementComponent" node_paths=PackedStringArray("health_component") instance=ExtResource("5_o1grr")]
+collision_layer = 4
+collision_mask = 8
+monitoring = false
+health_component = NodePath("../HealthComponent")
+
+[node name="HitboxShape" type="CollisionShape3D" parent="MovementComponent/HitboxComponent"]
+shape = SubResource("CapsuleShape3D_4gyqm")
+debug_color = Color(0.979227, 0, 0.393622, 0.894118)
+
+[connection signal="area_entered" from="MovementComponent/AttackComponent" to="MovementComponent/AttackComponent" method="_on_area_entered"]

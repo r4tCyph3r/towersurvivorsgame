@@ -1,0 +1,219 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1i5jrq3o5fvx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5q54l"]
+transparency = 1
+albedo_color = Color(0.298039, 1, 1, 0.227451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_653up"]
+material = SubResource("StandardMaterial3D_5q54l")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 1.0
+
+[node name="SpawningWireframe" type="Node3D"]
+
+[node name="Top" type="Node3D" parent="."]
+
+[node name="Spawn15" type="Marker3D" parent="Top" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -0.200443, 0, -24.5154)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top/Spawn15"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn16" type="Marker3D" parent="Top" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -5.20027, 0, -24.5574)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top/Spawn16"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn17" type="Marker3D" parent="Top" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -10.2001, 0, -24.5994)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top/Spawn17"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn18" type="Marker3D" parent="Top" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -15.1999, 0, -24.6413)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top/Spawn18"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn19" type="Marker3D" parent="Top" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, 15.648, 0, -24.3824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top/Spawn19"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn20" type="Marker3D" parent="Top" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, 10.6481, 0, -24.4243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top/Spawn20"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn21" type="Marker3D" parent="Top" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, 5.64832, 0, -24.4663)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top/Spawn21"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Bottom" type="Node3D" parent="."]
+
+[node name="Spawn22" type="Marker3D" parent="Bottom" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -1.41721, 0, 24.5861)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Spawn22"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn23" type="Marker3D" parent="Bottom" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -6.41703, 0, 24.5442)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Spawn23"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn24" type="Marker3D" parent="Bottom" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -11.4169, 0, 24.5022)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Spawn24"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn25" type="Marker3D" parent="Bottom" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, -16.4167, 0, 24.4602)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Spawn25"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn26" type="Marker3D" parent="Bottom" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, 14.4312, 0, 24.7192)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Spawn26"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn27" type="Marker3D" parent="Bottom" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, 9.43139, 0, 24.6772)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Spawn27"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn28" type="Marker3D" parent="Bottom" groups=["SpawnLocation"]]
+transform = Transform3D(-0.0083949, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.0083949, 4.43156, 0, 24.6352)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Spawn28"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Left" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84228, 0, 0)
+
+[node name="Spawn1" type="Marker3D" parent="Left" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left/Spawn1"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn2" type="Marker3D" parent="Left" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left/Spawn2"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn3" type="Marker3D" parent="Left" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left/Spawn3"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn4" type="Marker3D" parent="Left" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 15)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left/Spawn4"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn6" type="Marker3D" parent="Left" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -15.849)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left/Spawn6"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn7" type="Marker3D" parent="Left" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -10.849)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left/Spawn7"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn8" type="Marker3D" parent="Left" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -5.84897)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left/Spawn8"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Right" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.51877, 0, 0)
+
+[node name="Spawn5" type="Marker3D" parent="Right" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.11, 0, 0.804517)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right/Spawn5"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn9" type="Marker3D" parent="Right" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.11, 0, 5.80452)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right/Spawn9"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn10" type="Marker3D" parent="Right" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.11, 0, 10.8045)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right/Spawn10"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn11" type="Marker3D" parent="Right" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.11, 0, 15.8045)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right/Spawn11"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn12" type="Marker3D" parent="Right" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.11, 0, -15.0445)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right/Spawn12"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn13" type="Marker3D" parent="Right" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.11, 0, -10.0445)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right/Spawn13"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")
+
+[node name="Spawn14" type="Marker3D" parent="Right" groups=["SpawnLocation"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.11, 0, -5.04446)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right/Spawn14"]
+mesh = SubResource("CylinderMesh_653up")
+skeleton = NodePath("../../..")

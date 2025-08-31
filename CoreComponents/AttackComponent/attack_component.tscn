@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c37d4x21xvq75"]
+
+[ext_resource type="Script" uid="uid://b03j58au681v1" path="res://CoreComponents/AttackComponent/attack_component.gd" id="1_7c7m2"]
+
+[node name="AttackComponent" type="Area3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_7c7m2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
