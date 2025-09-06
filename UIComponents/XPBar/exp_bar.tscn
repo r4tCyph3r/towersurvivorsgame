@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://brt33oi2mihut"]
+
+[ext_resource type="Script" uid="uid://cxo4jrb1idp3" path="res://UIComponents/XPBar/exp_bar.gd" id="1_t0bw4"]
+[ext_resource type="Texture2D" uid="uid://e5bn08o2hiq4" path="res://assets/GUI/label_EP.png" id="3_t0bw4"]
+[ext_resource type="Texture2D" uid="uid://bb23otu21p7vq" path="res://assets/GUI/energy_bar_bg.png" id="4_t0bw4"]
+[ext_resource type="Texture2D" uid="uid://c3j8f3e4m4f57" path="res://assets/GUI/energy_bar_fill.png" id="5_ih21d"]
+
+[node name="EXPBar" type="MarginContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.5
+offset_right = 154.5
+offset_bottom = 53.0
+grow_horizontal = 2
+script = ExtResource("1_t0bw4")
+
+[node name="hSplit5050" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="hSplit5050"]
+layout_mode = 2
+texture = ExtResource("3_t0bw4")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Gauge" type="TextureProgressBar" parent="hSplit5050"]
+layout_mode = 2
+nine_patch_stretch = true
+stretch_margin_right = 250
+texture_under = ExtResource("4_t0bw4")
+texture_progress = ExtResource("5_ih21d")

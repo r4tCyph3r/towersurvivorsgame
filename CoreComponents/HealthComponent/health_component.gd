@@ -39,7 +39,7 @@ func on_damage(attack: Attack):
 	if current_health <= 0:
 		on_zero_health()
 	
-	emit_signal('update_health_HUD', current_health)
+	emit_signal('update_health_HUD', current_health, max_health)
 
 func on_zero_health():
 	if owner.is_in_group('enemy'):

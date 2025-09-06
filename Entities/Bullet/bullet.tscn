@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg25qr4h2wnf2"]
 
 [ext_resource type="PackedScene" uid="uid://c37d4x21xvq75" path="res://CoreComponents/AttackComponent/attack_component.tscn" id="1_v7oki"]
-[ext_resource type="Script" uid="uid://bmrmdqbb6ugfq" path="res://bullet.gd" id="1_v8qja"]
+[ext_resource type="Script" uid="uid://bmrmdqbb6ugfq" path="res://Entities/Bullet/bullet.gd" id="1_v8qja"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t4vbm"]
 

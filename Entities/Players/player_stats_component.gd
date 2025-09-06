@@ -8,3 +8,9 @@ class_name PlayerStatsComponent
 
 func _ready() -> void:
 	pass
+
+func increase_max_health(amount):
+	max_health = max_health * amount
+
+func increase_base_speed(amount):
+	base_speed = base_speed * amount

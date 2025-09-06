@@ -5,6 +5,7 @@ class_name ExperienceComponent
 
 # Custom signals
 signal update_xp_HUD
+signal player_level_up
 
 
 var current_xp: float
@@ -23,16 +24,16 @@ func _ready() -> void:
 
 func update_xp_percent():
 	var xp_percent = current_xp / max_xp * 100
-	if xp_percent == max_xp:
+	if current_xp >= max_xp:
 		level_up()
 	
-	emit_signal("update_xp_HUD", xp_percent, current_level)
+	emit_signal("update_xp_HUD", current_xp, max_xp, xp_percent)
 
 func level_up():
 	current_level += 1
 	current_xp = current_xp - max_xp
 	max_xp = max_xp * 1.1
-	print('Level: ', current_level,'Current XP: ', current_xp,'Maximum XP: ',max_xp)
+	emit_signal('player_level_up', current_level)
 
 func update_xp(received):
 	current_xp += received

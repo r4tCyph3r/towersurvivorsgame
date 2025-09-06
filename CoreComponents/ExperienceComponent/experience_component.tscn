@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckqth7x8sqnig"]
 
-[ext_resource type="Script" uid="uid://31vwina50gqa" path="res://experience_component.gd" id="1_vl3my"]
+[ext_resource type="Script" uid="uid://31vwina50gqa" path="res://CoreComponents/ExperienceComponent/experience_component.gd" id="1_vl3my"]
 
 [node name="ExperienceComponent" type="Node3D"]
 script = ExtResource("1_vl3my")

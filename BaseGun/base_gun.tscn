@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cocywbhw24djy"]
 
 [ext_resource type="Script" uid="uid://bevoulum02upb" path="res://BaseGun/base_gun.gd" id="1_kfdwl"]
-[ext_resource type="PackedScene" uid="uid://bg25qr4h2wnf2" path="res://bullet.tscn" id="2_4b1ks"]
-[ext_resource type="Script" uid="uid://cc6nuxdd2v3n2" path="res://UIComponents/HealthBar/WeaponStats.gd" id="3_yhavq"]
+[ext_resource type="PackedScene" uid="uid://bg25qr4h2wnf2" path="res://Entities/Bullet/bullet.tscn" id="2_4b1ks"]
+[ext_resource type="Script" uid="uid://cc6nuxdd2v3n2" path="res://Resources/WeaponStats.gd" id="3_yhavq"]
 [ext_resource type="Script" uid="uid://dlmc32eilsdt5" path="res://BaseGun/GunAimingComponent.gd" id="4_yhavq"]
 
 [sub_resource type="Resource" id="Resource_fhrpw"]

@@ -1,36 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnoike8lpg2k5"]
+[gd_scene load_steps=5 format=3 uid="uid://dnoike8lpg2k5"]
 
-[ext_resource type="Texture2D" uid="uid://56vakxa2i14f" path="res://assets/GUI/label_HP_bg.png" id="1_dh5c6"]
 [ext_resource type="Script" uid="uid://b2nwp80mgi5r5" path="res://UIComponents/HealthBar/HealthBar.gd" id="1_f4ljw"]
 [ext_resource type="Texture2D" uid="uid://cfbtn01ub2ffx" path="res://assets/GUI/label_HP.png" id="2_f4ljw"]
 [ext_resource type="Texture2D" uid="uid://js3ioja4aklu" path="res://assets/GUI/lifebar_bg.png" id="3_3n4hq"]
 [ext_resource type="Texture2D" uid="uid://dc7n5o7ihsww5" path="res://assets/GUI/lifebar_fill.png" id="4_tfyju"]
 
 [node name="HealthBar" type="MarginContainer"]
-offset_right = 434.0
+custom_minimum_size = Vector2(440, 40)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
 offset_bottom = 53.0
+grow_horizontal = 2
 script = ExtResource("1_f4ljw")
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="hSplit5050" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(440, 40)
 layout_mode = 2
-texture = ExtResource("1_dh5c6")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+size_flags_horizontal = 0
 
-[node name="hSplit5050" type="HBoxContainer" parent="Background"]
-layout_mode = 0
-offset_right = 450.0
-offset_bottom = 53.0
-
-[node name="Title" type="TextureRect" parent="Background/hSplit5050"]
+[node name="Title" type="TextureRect" parent="hSplit5050"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("2_f4ljw")
 expand_mode = 2
 stretch_mode = 3
 
-[node name="Gauge" type="TextureProgressBar" parent="Background/hSplit5050"]
+[node name="Gauge" type="TextureProgressBar" parent="hSplit5050"]
+custom_minimum_size = Vector2(380, 40)
 layout_mode = 2
-nine_patch_stretch = true
 stretch_margin_right = 395
 texture_under = ExtResource("3_3n4hq")
 texture_progress = ExtResource("4_tfyju")

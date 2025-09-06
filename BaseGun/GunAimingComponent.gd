@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		if target_enemy:
 			var target_position = target_enemy.global_position
 			var direction = Vector3(target_position.x - global_position.x, 0, target_position.z - global_position.z)
-			if direction.length() > 0:
+			if direction.length() > 0 and target_position != global_position:
 				look_at(global_position + direction, Vector3.UP)
 
 func get_closest_enemy():

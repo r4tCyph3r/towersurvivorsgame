@@ -12,8 +12,8 @@ func new_enemy(enemy):
 	enemy.connect('enemy_died', drop_xp)
 
 func drop_xp(enemy):
-		var xpcube = preload("res://experience.tscn")
-		var xpdrop = xpcube.instantiate()
-		var enemy_death_location = enemy.find_child('MovementComponent').global_position
-		get_tree().root.add_child(xpdrop)
-		xpdrop.global_position = enemy_death_location
+	var xpcube = preload("res://Entities/Experience/experience.tscn")
+	var xpdrop = xpcube.instantiate()
+	var enemy_death_location = enemy.find_child('MovementComponent').global_position
+	get_tree().root.add_child(xpdrop)
+	xpdrop.global_position = enemy_death_location

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bon3innmeimlg"]
 
-[ext_resource type="PackedScene" uid="uid://cplkyi3blhi2j" path="res://pickable_component.tscn" id="1_eu0gq"]
-[ext_resource type="Script" uid="uid://db88jmtl8hfjd" path="res://experience.gd" id="1_rronj"]
+[ext_resource type="PackedScene" uid="uid://cplkyi3blhi2j" path="res://CoreComponents/PickableComponent/pickable_component.tscn" id="1_eu0gq"]
+[ext_resource type="Script" uid="uid://db88jmtl8hfjd" path="res://Entities/Experience/experience.gd" id="1_rronj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rronj"]
 albedo_color = Color(0.0778749, 0.315617, 1, 1)
@@ -15,9 +15,10 @@ backlight = Color(0.616161, 0.296311, 0.153213, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_k42go"]
 material = SubResource("StandardMaterial3D_rronj")
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eu0gq"]
+size = Vector3(0.21, 0.21, 0.21)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rronj"]
 size = Vector3(0.1, 0.1, 0.1)

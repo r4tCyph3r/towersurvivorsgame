@@ -1,16 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://bltjtnl520und"]
+[gd_scene load_steps=14 format=3 uid="uid://bltjtnl520und"]
 
 [ext_resource type="PackedScene" uid="uid://6mbtoblws0cn" path="res://CoreComponents/InputComponents/player_input_component.tscn" id="1_onrkg"]
 [ext_resource type="Script" uid="uid://dxib3jt52vcjg" path="res://Entities/Players/player_stats_component.gd" id="1_p4qpu"]
+[ext_resource type="PackedScene" uid="uid://dp76oit6ira6l" path="res://Debug/debug_hud.tscn" id="1_toava"]
 [ext_resource type="PackedScene" uid="uid://cm683bq50sajg" path="res://CoreComponents/MovementComponent/movement_component.tscn" id="2_i3pqv"]
-[ext_resource type="PackedScene" uid="uid://brt33oi2mihut" path="res://exp_bar.tscn" id="2_toava"]
 [ext_resource type="PackedScene" uid="uid://chq6btlbbxpl0" path="res://CoreComponents/HealthComponent/health_component.tscn" id="3_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://ty5v85nb0alk" path="res://CoreComponents/HitboxComponent/hitbox_component.tscn" id="4_6adbs"]
-[ext_resource type="PackedScene" uid="uid://ckqth7x8sqnig" path="res://experience_component.tscn" id="5_useuu"]
-[ext_resource type="PackedScene" uid="uid://dnoike8lpg2k5" path="res://UIComponents/HealthBar/HealthBar.tscn" id="6_6adbs"]
+[ext_resource type="PackedScene" uid="uid://ckqth7x8sqnig" path="res://CoreComponents/ExperienceComponent/experience_component.tscn" id="5_useuu"]
 [ext_resource type="PackedScene" uid="uid://cocywbhw24djy" path="res://BaseGun/base_gun.tscn" id="7_5vp2d"]
-[ext_resource type="PackedScene" uid="uid://nc6sgca7nyw1" path="res://pickup_component.tscn" id="8_qwtga"]
-[ext_resource type="PackedScene" uid="uid://d1i5jrq3o5fvx" path="res://spawning_wireframe.tscn" id="8_useuu"]
+[ext_resource type="PackedScene" uid="uid://nc6sgca7nyw1" path="res://CoreComponents/PickupComponent/pickup_component.tscn" id="8_qwtga"]
+[ext_resource type="PackedScene" uid="uid://d1i5jrq3o5fvx" path="res://CoreComponents/EnemySpawningComponent/spawning_wireframe.tscn" id="8_useuu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrkg"]
 albedo_color = Color(0.857059, 0.448622, 1.92523e-07, 1)
@@ -23,33 +22,13 @@ radius = 0.582168
 
 [node name="Player" type="Node3D" groups=["player"]]
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD"]
-offset_right = 1152.0
-offset_bottom = 68.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer"]
-layout_mode = 2
-
-[node name="Bars" type="VBoxContainer" parent="HUD/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="HealthBar" parent="HUD/MarginContainer/HBoxContainer/Bars" node_paths=PackedStringArray("health") instance=ExtResource("6_6adbs")]
-layout_mode = 2
-health = NodePath("../../../../../HealthComponent")
-
-[node name="EXPBar" parent="HUD" node_paths=PackedStringArray("xp") instance=ExtResource("2_toava")]
-offset_left = -3.0
-offset_top = 51.0
-offset_right = -3.0
-offset_bottom = 51.0
-xp = NodePath("../../ExperienceComponent")
-
 [node name="PlayerStatsComponent" type="Node3D" parent="."]
 script = ExtResource("1_p4qpu")
-max_health = 100
 base_speed = 7.0
+
+[node name="DebugHUD" parent="." node_paths=PackedStringArray("health", "exp") instance=ExtResource("1_toava")]
+health = NodePath("../HealthComponent")
+exp = NodePath("../ExperienceComponent")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_i3pqv")]
 
